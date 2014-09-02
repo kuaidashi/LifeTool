@@ -7,9 +7,15 @@
 //
 
 #import "PhoneViewController.h"
+#import "Person.h"
+#import <AddressBook/AddressBook.h>
 
-@interface PhoneViewController ()<UITableViewDataSource, UITableViewDelegate>
+typedef void (^RequestAddressBookBlock)(BOOL success);
 
+@interface PhoneViewController ()<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@property (strong, nonatomic) NSMutableArray *addressBook;
+@property (strong, nonatomic) NSMutableArray *matchAddressBook;
+@property (nonatomic, getter = isMatching) BOOL matching;
 @end
 
 @implementation PhoneViewController
@@ -17,8 +23,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"拨号";
+    
+    self.addressBook = [[NSMutableArray alloc] init];
+    self.matchAddressBook = [[NSMutableArray alloc] init];
+    
     [self.inputTextField becomeFirstResponder];
+    [self requestAddressBookAccessWithBlock:^(BOOL success) {
+        if (success) {
+            [self.tableView reloadData];
+        } else {
+            
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,13 +44,127 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (self.isMatching) {
+        return self.matchAddressBook.count;
+    }
+    return self.addressBook.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Phone"];
+    Person *person;
+    if (self.isMatching) {
+        person = [self.matchAddressBook objectAtIndex:indexPath.row];
+    } else {
+        person = [self.addressBook objectAtIndex:indexPath.row];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", (person.firstName ? person.firstName : @""), (person.lastName ? person.lastName : @"")];
+    cell.detailTextLabel.text = person.phoneNumber;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    Person *person;
+    if (self.isMatching) {
+        person = [self.matchAddressBook objectAtIndex:indexPath.row];
+    } else {
+        person = [self.addressBook objectAtIndex:indexPath.row];
+    }
+    [self callWithPhoneNumber:person.phoneNumber];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *inputNumber = @"";
+    if ([string isEqualToString:@""]) {
+        NSInteger index = textField.text.length - 1;
+        if (index < 0) {
+            index = 0;
+        }
+        inputNumber = [textField.text substringToIndex:index];
+    } else {
+        inputNumber = [textField.text stringByAppendingString:string];
+    }
+    if (inputNumber.length > 0) {
+        self.matching = YES;
+        [self.matchAddressBook removeAllObjects];
+        
+        
+        
+        for (Person *item in self.addressBook) {
+            if ([item.phoneNumber hasPrefix:inputNumber]) {
+                [self.matchAddressBook addObject:item];
+            }
+        }
+    } else {
+        self.matching = NO;
+    }
+    [self.tableView reloadData];
+    return YES;
+}
+
+- (void)requestAddressBookAccessWithBlock:(RequestAddressBookBlock)block
+{
+    CFErrorRef error = nil;
+    ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, &error);
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
+        ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
+            [self getAddressBookWithRef:addressBookRef];
+            if (block) {
+                block(YES);
+            }
+        });
+    } else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+        [self getAddressBookWithRef:addressBookRef];
+        if (block) {
+            block(YES);
+        }
+    } else {
+        if (block) {
+            block(NO);
+        }
+    }
+}
+
+- (void)getAddressBookWithRef:(ABAddressBookRef)addressBookRef
+{
+    CFArrayRef addressArr = ABAddressBookCopyArrayOfAllPeople(addressBookRef);
+    for (NSInteger i = 0; i < CFArrayGetCount(addressArr); i++) {
+        ABRecordRef person = CFArrayGetValueAtIndex(addressArr, i);
+        NSString *firstName = (NSString*)CFBridgingRelease(ABRecordCopyValue(person, kABPersonFirstNameProperty));
+        NSString *lastName = (NSString*)CFBridgingRelease(ABRecordCopyValue(person, kABPersonLastNameProperty));
+        ABMultiValueRef phone = ABRecordCopyValue(person, kABPersonPhoneProperty);
+        for (int j = 0; j < ABMultiValueGetCount(phone); j++) {
+            NSString *phoneNumber = (NSString*)CFBridgingRelease(ABMultiValueCopyValueAtIndex(phone, j));
+            Person *person = [[Person alloc] initWithFirstName:firstName lastName:lastName phoneNumber:phoneNumber];
+            [self.addressBook addObject:person];
+        }
+        CFRelease(phone);
+        CFRelease(person);
+    }
+    CFRelease(addressArr);
+}
+
+- (void)callWithPhoneNumber:(NSString *)phoneNumber
+{
+    NSString *tel = [[NSString alloc] initWithFormat:@"telprompt://%@", phoneNumber];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:tel]];
+}
+
+- (IBAction)onClickSendMessage:(id)sender
+{
+    if (self.inputTextField.text.length > 0) {
+        [self callWithPhoneNumber:self.inputTextField.text];
+    }
+}
+
+- (IBAction)onClickCallNumber:(id)sender
+{
+    if (self.inputTextField.text.length > 0) {
+        [self callWithPhoneNumber:self.inputTextField.text];
+    }
+}
 @end

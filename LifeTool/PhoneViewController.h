@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface PhoneViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+
+- (IBAction)onClickSendMessage:(id)sender;
+- (IBAction)onClickCallNumber:(id)sender;
 
 @end

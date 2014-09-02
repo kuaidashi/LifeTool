@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4CA8C319B5F8BF000946D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4CA8C219B5F8BF000946D7 /* AddressBook.framework */; };
+		5A4CA8C819B5FBDF000946D7 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4CA8C719B5FBDF000946D7 /* Person.m */; };
+		5A4CA8CA19B61042000946D7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4CA8C919B61042000946D7 /* CoreText.framework */; };
 		5AB961B619B5AFC300EB8619 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961B519B5AFC300EB8619 /* Foundation.framework */; };
 		5AB961B819B5AFC300EB8619 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961B719B5AFC300EB8619 /* CoreGraphics.framework */; };
 		5AB961BA19B5AFC300EB8619 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961B919B5AFC300EB8619 /* UIKit.framework */; };
@@ -34,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A4CA8C219B5F8BF000946D7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		5A4CA8C619B5FBDF000946D7 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5A4CA8C719B5FBDF000946D7 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		5A4CA8C919B61042000946D7 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		5AB961B219B5AFC300EB8619 /* LifeTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB961B519B5AFC300EB8619 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AB961B719B5AFC300EB8619 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4CA8CA19B61042000946D7 /* CoreText.framework in Frameworks */,
+				5A4CA8C319B5F8BF000946D7 /* AddressBook.framework in Frameworks */,
 				5AB961B819B5AFC300EB8619 /* CoreGraphics.framework in Frameworks */,
 				5AB961BA19B5AFC300EB8619 /* UIKit.framework in Frameworks */,
 				5AB961B619B5AFC300EB8619 /* Foundation.framework in Frameworks */,
@@ -79,6 +88,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A4CA8C419B5FBC6000946D7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5AB961CA19B5AFC300EB8619 /* PhoneViewController.h */,
+				5AB961CB19B5AFC300EB8619 /* PhoneViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5A4CA8C519B5FBCF000946D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A4CA8C619B5FBDF000946D7 /* Person.h */,
+				5A4CA8C719B5FBDF000946D7 /* Person.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5AB961A919B5AFC300EB8619 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +128,8 @@
 		5AB961B419B5AFC300EB8619 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A4CA8C919B61042000946D7 /* CoreText.framework */,
+				5A4CA8C219B5F8BF000946D7 /* AddressBook.framework */,
 				5AB961B519B5AFC300EB8619 /* Foundation.framework */,
 				5AB961B719B5AFC300EB8619 /* CoreGraphics.framework */,
 				5AB961B919B5AFC300EB8619 /* UIKit.framework */,
@@ -112,11 +141,11 @@
 		5AB961BB19B5AFC300EB8619 /* LifeTool */ = {
 			isa = PBXGroup;
 			children = (
+				5A4CA8C519B5FBCF000946D7 /* Model */,
+				5A4CA8C419B5FBC6000946D7 /* Controller */,
 				5AB961C419B5AFC300EB8619 /* AppDelegate.h */,
 				5AB961C519B5AFC300EB8619 /* AppDelegate.m */,
 				5AB961C719B5AFC300EB8619 /* Main.storyboard */,
-				5AB961CA19B5AFC300EB8619 /* PhoneViewController.h */,
-				5AB961CB19B5AFC300EB8619 /* PhoneViewController.m */,
 				5AB961CD19B5AFC300EB8619 /* Images.xcassets */,
 				5AB961BC19B5AFC300EB8619 /* Supporting Files */,
 			);
@@ -251,6 +280,7 @@
 			files = (
 				5AB961CC19B5AFC300EB8619 /* PhoneViewController.m in Sources */,
 				5AB961C619B5AFC300EB8619 /* AppDelegate.m in Sources */,
+				5A4CA8C819B5FBDF000946D7 /* Person.m in Sources */,
 				5AB961C219B5AFC300EB8619 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +486,7 @@
 				5AB961E619B5AFC300EB8619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AB961E719B5AFC300EB8619 /* Build configuration list for PBXNativeTarget "LifeToolTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +495,7 @@
 				5AB961E919B5AFC300EB8619 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

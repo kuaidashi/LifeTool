@@ -4,20 +4,20 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Phone View Controller-->
+        <!--Phone View Controller - 拨号助手-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="PhoneViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ogr-1Z-nC9"/>
-                        <viewControllerLayoutGuide type="bottom" id="u2i-rB-3mr"/>
+                        <viewControllerLayoutGuide type="top" id="P2U-wA-wIZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="TNN-99-Che"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="q2i-uZ-Sif">
-                                <rect key="frame" x="0.0" y="64" width="320" height="238"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="302"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -29,36 +29,57 @@
                                 <rect key="frame" x="0.0" y="302" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lbz-sE-aA0">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lbz-sE-aA0">
                                         <rect key="frame" x="50" y="5" width="220" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" keyboardType="phonePad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="2So-aI-5Sb"/>
+                                        </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-eS-gqd">
+                                        <rect key="frame" x="5" y="3" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="IconMessage">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickSendMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YZa-uY-Q9V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrU-x5-0je">
+                                        <rect key="frame" x="271" y="3" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="IconPhone">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClickCallNumber:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7WD-48-7YG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Lbz-sE-aA0" firstAttribute="top" secondItem="W62-jb-rbe" secondAttribute="top" constant="5" id="MsV-EF-NI7"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lbz-sE-aA0" secondAttribute="trailing" constant="50" id="jdQ-Kn-ZEV"/>
-                                    <constraint firstItem="Lbz-sE-aA0" firstAttribute="leading" secondItem="W62-jb-rbe" secondAttribute="leading" constant="50" id="l9w-0F-3FV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Lbz-sE-aA0" secondAttribute="bottom" constant="5" id="rCm-wi-0s1"/>
-                                    <constraint firstAttribute="height" constant="50" id="sKg-dB-rBg"/>
+                                    <constraint firstAttribute="height" constant="50" id="GrM-27-q9o"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="W62-jb-rbe" firstAttribute="top" secondItem="q2i-uZ-Sif" secondAttribute="bottom" id="0tA-Gs-mDR"/>
-                            <constraint firstAttribute="trailing" secondItem="q2i-uZ-Sif" secondAttribute="trailing" id="HuN-aV-6Xk"/>
-                            <constraint firstItem="q2i-uZ-Sif" firstAttribute="top" secondItem="Ogr-1Z-nC9" secondAttribute="bottom" id="MbY-SG-aQ5"/>
-                            <constraint firstItem="u2i-rB-3mr" firstAttribute="top" secondItem="W62-jb-rbe" secondAttribute="bottom" constant="216" id="RK4-WQ-lrX"/>
-                            <constraint firstItem="q2i-uZ-Sif" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ZS8-oE-KKJ"/>
-                            <constraint firstAttribute="trailing" secondItem="W62-jb-rbe" secondAttribute="trailing" id="iPT-4x-sJB"/>
-                            <constraint firstItem="W62-jb-rbe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="rhA-1k-vKH"/>
+                            <constraint firstAttribute="trailing" secondItem="q2i-uZ-Sif" secondAttribute="trailing" id="41C-9q-fEQ"/>
+                            <constraint firstAttribute="trailing" secondItem="W62-jb-rbe" secondAttribute="trailing" id="4rB-vt-sSW"/>
+                            <constraint firstItem="W62-jb-rbe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NSh-EC-NYt"/>
+                            <constraint firstItem="TNN-99-Che" firstAttribute="top" secondItem="W62-jb-rbe" secondAttribute="bottom" constant="216" id="Xf8-ig-tdT"/>
+                            <constraint firstItem="W62-jb-rbe" firstAttribute="top" secondItem="q2i-uZ-Sif" secondAttribute="bottom" id="iTx-2S-DzD"/>
+                            <constraint firstItem="W62-jb-rbe" firstAttribute="top" secondItem="q2i-uZ-Sif" secondAttribute="bottom" id="ka1-8r-cin"/>
+                            <constraint firstItem="q2i-uZ-Sif" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="lLh-Uz-PhE"/>
+                            <constraint firstItem="q2i-uZ-Sif" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="x9G-lY-BFv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yJy-AU-vnr"/>
+                    <navigationItem key="navigationItem" title="拨号助手" id="yJy-AU-vnr"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="inputTextField" destination="Lbz-sE-aA0" id="Bu8-9p-DNy"/>
                         <outlet property="tableView" destination="q2i-uZ-Sif" id="4e0-7k-EhE"/>
@@ -84,6 +105,10 @@
             <point key="canvasLocation" x="-230" y="126"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IconMessage" width="44" height="44"/>
+        <image name="IconPhone" width="44" height="44"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
