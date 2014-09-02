@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AB961B619B5AFC300EB8619 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961B519B5AFC300EB8619 /* Foundation.framework */; };
+		5AB961B819B5AFC300EB8619 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961B719B5AFC300EB8619 /* CoreGraphics.framework */; };
+		5AB961BA19B5AFC300EB8619 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961B919B5AFC300EB8619 /* UIKit.framework */; };
+		5AB961C019B5AFC300EB8619 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AB961BE19B5AFC300EB8619 /* InfoPlist.strings */; };
+		5AB961C219B5AFC300EB8619 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB961C119B5AFC300EB8619 /* main.m */; };
+		5AB961C619B5AFC300EB8619 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB961C519B5AFC300EB8619 /* AppDelegate.m */; };
+		5AB961C919B5AFC300EB8619 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB961C719B5AFC300EB8619 /* Main.storyboard */; };
+		5AB961CC19B5AFC300EB8619 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB961CB19B5AFC300EB8619 /* PhoneViewController.m */; };
+		5AB961CE19B5AFC300EB8619 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB961CD19B5AFC300EB8619 /* Images.xcassets */; };
+		5AB961D519B5AFC300EB8619 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961D419B5AFC300EB8619 /* XCTest.framework */; };
+		5AB961D619B5AFC300EB8619 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961B519B5AFC300EB8619 /* Foundation.framework */; };
+		5AB961D719B5AFC300EB8619 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB961B919B5AFC300EB8619 /* UIKit.framework */; };
+		5AB961DF19B5AFC300EB8619 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AB961DD19B5AFC300EB8619 /* InfoPlist.strings */; };
+		5AB961E119B5AFC300EB8619 /* LifeToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB961E019B5AFC300EB8619 /* LifeToolTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AB961D819B5AFC300EB8619 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AB961AA19B5AFC300EB8619 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AB961B119B5AFC300EB8619;
+			remoteInfo = LifeTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AB961B219B5AFC300EB8619 /* LifeTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB961B519B5AFC300EB8619 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5AB961B719B5AFC300EB8619 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5AB961B919B5AFC300EB8619 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5AB961BD19B5AFC300EB8619 /* LifeTool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LifeTool-Info.plist"; sourceTree = "<group>"; };
+		5AB961BF19B5AFC300EB8619 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AB961C119B5AFC300EB8619 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5AB961C319B5AFC300EB8619 /* LifeTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LifeTool-Prefix.pch"; sourceTree = "<group>"; };
+		5AB961C419B5AFC300EB8619 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5AB961C519B5AFC300EB8619 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5AB961C819B5AFC300EB8619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AB961CA19B5AFC300EB8619 /* PhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
+		5AB961CB19B5AFC300EB8619 /* PhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
+		5AB961CD19B5AFC300EB8619 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5AB961D319B5AFC300EB8619 /* LifeToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB961D419B5AFC300EB8619 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5AB961DC19B5AFC300EB8619 /* LifeToolTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LifeToolTests-Info.plist"; sourceTree = "<group>"; };
+		5AB961DE19B5AFC300EB8619 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AB961E019B5AFC300EB8619 /* LifeToolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeToolTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AB961AF19B5AFC300EB8619 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB961B819B5AFC300EB8619 /* CoreGraphics.framework in Frameworks */,
+				5AB961BA19B5AFC300EB8619 /* UIKit.framework in Frameworks */,
+				5AB961B619B5AFC300EB8619 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB961D019B5AFC300EB8619 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB961D519B5AFC300EB8619 /* XCTest.framework in Frameworks */,
+				5AB961D719B5AFC300EB8619 /* UIKit.framework in Frameworks */,
+				5AB961D619B5AFC300EB8619 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AB961A919B5AFC300EB8619 = {
+			isa = PBXGroup;
+			children = (
+				5AB961BB19B5AFC300EB8619 /* LifeTool */,
+				5AB961DA19B5AFC300EB8619 /* LifeToolTests */,
+				5AB961B419B5AFC300EB8619 /* Frameworks */,
+				5AB961B319B5AFC300EB8619 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AB961B319B5AFC300EB8619 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AB961B219B5AFC300EB8619 /* LifeTool.app */,
+				5AB961D319B5AFC300EB8619 /* LifeToolTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AB961B419B5AFC300EB8619 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AB961B519B5AFC300EB8619 /* Foundation.framework */,
+				5AB961B719B5AFC300EB8619 /* CoreGraphics.framework */,
+				5AB961B919B5AFC300EB8619 /* UIKit.framework */,
+				5AB961D419B5AFC300EB8619 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5AB961BB19B5AFC300EB8619 /* LifeTool */ = {
+			isa = PBXGroup;
+			children = (
+				5AB961C419B5AFC300EB8619 /* AppDelegate.h */,
+				5AB961C519B5AFC300EB8619 /* AppDelegate.m */,
+				5AB961C719B5AFC300EB8619 /* Main.storyboard */,
+				5AB961CA19B5AFC300EB8619 /* PhoneViewController.h */,
+				5AB961CB19B5AFC300EB8619 /* PhoneViewController.m */,
+				5AB961CD19B5AFC300EB8619 /* Images.xcassets */,
+				5AB961BC19B5AFC300EB8619 /* Supporting Files */,
+			);
+			path = LifeTool;
+			sourceTree = "<group>";
+		};
+		5AB961BC19B5AFC300EB8619 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AB961BD19B5AFC300EB8619 /* LifeTool-Info.plist */,
+				5AB961BE19B5AFC300EB8619 /* InfoPlist.strings */,
+				5AB961C119B5AFC300EB8619 /* main.m */,
+				5AB961C319B5AFC300EB8619 /* LifeTool-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AB961DA19B5AFC300EB8619 /* LifeToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AB961E019B5AFC300EB8619 /* LifeToolTests.m */,
+				5AB961DB19B5AFC300EB8619 /* Supporting Files */,
+			);
+			path = LifeToolTests;
+			sourceTree = "<group>";
+		};
+		5AB961DB19B5AFC300EB8619 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AB961DC19B5AFC300EB8619 /* LifeToolTests-Info.plist */,
+				5AB961DD19B5AFC300EB8619 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AB961B119B5AFC300EB8619 /* LifeTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB961E419B5AFC300EB8619 /* Build configuration list for PBXNativeTarget "LifeTool" */;
+			buildPhases = (
+				5AB961AE19B5AFC300EB8619 /* Sources */,
+				5AB961AF19B5AFC300EB8619 /* Frameworks */,
+				5AB961B019B5AFC300EB8619 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifeTool;
+			productName = LifeTool;
+			productReference = 5AB961B219B5AFC300EB8619 /* LifeTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AB961D219B5AFC300EB8619 /* LifeToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AB961E719B5AFC300EB8619 /* Build configuration list for PBXNativeTarget "LifeToolTests" */;
+			buildPhases = (
+				5AB961CF19B5AFC300EB8619 /* Sources */,
+				5AB961D019B5AFC300EB8619 /* Frameworks */,
+				5AB961D119B5AFC300EB8619 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AB961D919B5AFC300EB8619 /* PBXTargetDependency */,
+			);
+			name = LifeToolTests;
+			productName = LifeToolTests;
+			productReference = 5AB961D319B5AFC300EB8619 /* LifeToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AB961AA19B5AFC300EB8619 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Chihya Tsang";
+				TargetAttributes = {
+					5AB961D219B5AFC300EB8619 = {
+						TestTargetID = 5AB961B119B5AFC300EB8619;
+					};
+				};
+			};
+			buildConfigurationList = 5AB961AD19B5AFC300EB8619 /* Build configuration list for PBXProject "LifeTool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AB961A919B5AFC300EB8619;
+			productRefGroup = 5AB961B319B5AFC300EB8619 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AB961B119B5AFC300EB8619 /* LifeTool */,
+				5AB961D219B5AFC300EB8619 /* LifeToolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AB961B019B5AFC300EB8619 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB961CE19B5AFC300EB8619 /* Images.xcassets in Resources */,
+				5AB961C019B5AFC300EB8619 /* InfoPlist.strings in Resources */,
+				5AB961C919B5AFC300EB8619 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB961D119B5AFC300EB8619 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB961DF19B5AFC300EB8619 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AB961AE19B5AFC300EB8619 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB961CC19B5AFC300EB8619 /* PhoneViewController.m in Sources */,
+				5AB961C619B5AFC300EB8619 /* AppDelegate.m in Sources */,
+				5AB961C219B5AFC300EB8619 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AB961CF19B5AFC300EB8619 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AB961E119B5AFC300EB8619 /* LifeToolTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AB961D919B5AFC300EB8619 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AB961B119B5AFC300EB8619 /* LifeTool */;
+			targetProxy = 5AB961D819B5AFC300EB8619 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AB961BE19B5AFC300EB8619 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB961BF19B5AFC300EB8619 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5AB961C719B5AFC300EB8619 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB961C819B5AFC300EB8619 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5AB961DD19B5AFC300EB8619 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB961DE19B5AFC300EB8619 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AB961E219B5AFC300EB8619 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5AB961E319B5AFC300EB8619 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AB961E519B5AFC300EB8619 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTool/LifeTool-Prefix.pch";
+				INFOPLIST_FILE = "LifeTool/LifeTool-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5AB961E619B5AFC300EB8619 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTool/LifeTool-Prefix.pch";
+				INFOPLIST_FILE = "LifeTool/LifeTool-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5AB961E819B5AFC300EB8619 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LifeTool.app/LifeTool";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTool/LifeTool-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LifeToolTests/LifeToolTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5AB961E919B5AFC300EB8619 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LifeTool.app/LifeTool";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTool/LifeTool-Prefix.pch";
+				INFOPLIST_FILE = "LifeToolTests/LifeToolTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AB961AD19B5AFC300EB8619 /* Build configuration list for PBXProject "LifeTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB961E219B5AFC300EB8619 /* Debug */,
+				5AB961E319B5AFC300EB8619 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AB961E419B5AFC300EB8619 /* Build configuration list for PBXNativeTarget "LifeTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB961E519B5AFC300EB8619 /* Debug */,
+				5AB961E619B5AFC300EB8619 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5AB961E719B5AFC300EB8619 /* Build configuration list for PBXNativeTarget "LifeToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AB961E819B5AFC300EB8619 /* Debug */,
+				5AB961E919B5AFC300EB8619 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AB961AA19B5AFC300EB8619 /* Project object */;
+}
