@@ -59,7 +59,7 @@ typedef void (^RequestAddressBookBlock)(BOOL success);
     } else {
         person = [self.addressBook objectAtIndex:indexPath.row];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", (person.firstName ? person.firstName : @""), (person.lastName ? person.lastName : @"")];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", (person.lastName ? person.lastName : @""), (person.firstName ? person.firstName : @"")];
     cell.detailTextLabel.text = person.phoneNumber;
     return cell;
 }
@@ -93,9 +93,11 @@ typedef void (^RequestAddressBookBlock)(BOOL success);
         [self.matchAddressBook removeAllObjects];
         NSMutableArray *tempArray = [[NSMutableArray alloc] init];
         for (Person *item in self.addressBook) {
-            if ([item.phoneNumber hasPrefix:inputNumber]) {
+            NSString *phoneNumer = [item.phoneNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+            phoneNumer = [phoneNumer stringByReplacingOccurrencesOfString:@"+" withString:@""];
+            if ([phoneNumer hasPrefix:inputNumber]) {
                 [self.matchAddressBook addObject:item];
-            } else if ([item.phoneNumber rangeOfString:inputNumber].length > 0) {
+            } else if ([phoneNumer rangeOfString:inputNumber].length > 0) {
                 [tempArray addObject:item];
             }
         }
